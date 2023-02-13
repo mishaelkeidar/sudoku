@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* level difficulty page style */
+
+  html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: -webkit-linear-gradient(left, blue, aqua);
+  }
+
+  .levelDifficultyContainer{
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    max-width: 390px;
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  }
+
+  .firstLevelDifficultyTitle{
+    padding-bottom: 20px;
+  }
+
+  #firstDiffTitleSpan{
+    color: blue;
+  }
+
+  .secondLevelDifficultyTitle{
+    padding-bottom: 20px;
+  }
+
+  .easyLevelText{
+    position: relative;
+    right: 70px;
+    top: 35px;
+  }
+
+  .cube1{
+    position: relative;
+    right: 70px;
+    top: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+  }
+
+  .mediumLevelText{
+    position: relative;
+    bottom: 33px;
+  }
+
+  .cube2{
+    position: relative;
+    bottom: 18px;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+  }
+
+  .hardLevelText{
+    position: relative;
+    bottom: 100px;
+    left: 70px;
+  }
+
+  .cube3{
+    position: relative;
+    left: 70px;
+    bottom: 86px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }

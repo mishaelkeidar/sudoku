@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>open page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='openPage.css'>
+</head>
+<body>
+
+<!-- On this page you can enter a username and password as defined and
+     then click the enter button to check if the entered details are correct. -->
+
+    <div class="openContainer">
+        <div><h1 class="openTitle">sudoku</h1></div>
+        <div><input type="text" placeholder="User Name" class="userNameInput" id="userNameInputId"></div><br>
+        <div><input type="number" placeholder="Password" class="passwordInput" id="passwordInputId"></div><br>
+        <div><span id="error"></span></div>
+        <div><button id="btnFirsteContainerId" class="btnOpenContainer" onclick="enterBtn()">Enter</button></div>
+    </div>
+
+
+    <script src='openPage.js'></script>
+</body>
+</html>

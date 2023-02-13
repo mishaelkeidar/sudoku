@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>easy difficulty</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='levels.css'>
+    <script src='levels.js'></script>
+</head>
+<body onload="easyBtn()">
+
+<!-- Building the game board according to the easy level:
+
+The board is built from a table that contains 9 rows and 9 columns in each row.
+Below the board are located a again button and an finish button, 
+where the again button will randomly change the boards and remove an amount of digits from the game board according to the difficulty level.
+And as for the finish button, upon clicking the button, 
+a check will be made as to whether the user has solved the sudoku board or not and a message will be displayed accordingly. -->
+
+<div class="sudokuGameContainer">
+  <div><h1>GOOD LUCK</h1></div>
+<div>
+  <table>
+    <tr>
+      <td><input type="text" class="sudokuCell" id="td00" maxlength="1" /></td>
+      <td><input type="text" class="sudokuCell" id="td01" maxlength="1" /></td>
+      <td class="td2"><input type="text" class="sudokuCell" id="td02" maxlength="1" /></td>
+      <td><input type="text" class="sudokuCell" id="td03" maxlength="1" /></td>
+      <td><input type="text" class="sudokuCell" id="td04" maxlength="1" /></td>
+      <td class="td5"><input type="text" class="sudokuCell" id="td05" maxlength="1" /></td>
+      <td><input type="text" class="sudokuCell" id="td06" maxlength="1" /></td>
+      <td><input type="text" class="sudokuCell" id="td07" maxlength="1" /></td>
+      <td><input type="text" class="sudokuCell" id="td08" maxlength="1" /></td>
+    </tr>
+    <tr>
+        <td><input type="text" class="sudokuCell" id="td10" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td11" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td12" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td13" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td14" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td15" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td16" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td17" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td18" maxlength="1" /></td>
+      </tr>
+      <tr id="tr2">
+        <td><input type="text" class="sudokuCell2" id="td20" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell2" id="td21" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell2" id="td22" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell2" id="td23" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell2" id="td24" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell2" id="td25" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell2" id="td26" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell2" id="td27" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell2" id="td28" maxlength="1" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="sudokuCell" id="td30" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td31" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td32" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td33" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td34" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td35" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td36" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td37" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td38" maxlength="1" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="sudokuCell" id="td40" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td41" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td42" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td43" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td44" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td45" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td46" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td47" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td48" maxlength="1" /></td>
+      </tr>
+      <tr id="tr5">
+        <td><input type="text" class="sudokuCell" id="td50" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td51" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td52" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td53" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td54" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td55" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td56" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td57" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td58" maxlength="1" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="sudokuCell" id="td60" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td61" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td62" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td63" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td64" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td65" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td66" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td67" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td68" maxlength="1" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="sudokuCell" id="td70" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td71" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td72" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td73" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td74" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td75" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td76" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td77" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td78" maxlength="1" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="sudokuCell" id="td80" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td81" maxlength="1" /></td>
+        <td class="td2"><input type="text" class="sudokuCell" id="td82" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td83" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td84" maxlength="1" /></td>
+        <td class="td5"><input type="text" class="sudokuCell" id="td85" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td86" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td87" maxlength="1" /></td>
+        <td><input type="text" class="sudokuCell" id="td88" maxlength="1" /></td>
+      </tr>
+      <div><button class="finishButton" id="finishButtonId"  onclick="finishBtn()">finish</button></div>
+  <div><button class="againButton" id="againButtonId" onclick="easyBtn()">again</button></div>
+</div>
+</div>
+
+    
+</body>
+</html>
